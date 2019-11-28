@@ -1,22 +1,78 @@
-.App {
+.page-container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.page-title {
   text-align: center;
+  color: rgb(133, 46, 247);
+  margin-bottom: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-form{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.todo-input {
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  padding: 5px;
+  border-bottom : 3px solid rgb(2, 100, 92);
+}
+
+.todo-input:focus {
+  outline: none;
+}
+
+.submit-btn {
+  border: none;
+  background-color: rgb(69, 0, 148);
+  color: white;
+  padding: 10px 25px;
+  margin-left: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+}
+
+.submit-btn:hover {
+  background-color:rgb(118, 44, 202);
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  padding: 20px 15px;
+  border-bottom: 1px solid rgb(180, 178, 178);
+}
+
+.todo-text {
+  color: rgb(41, 41, 41);
+  font-size: 18px;
+}
+
+.todo-text-complete {
+  text-decoration: line-through;
+}
+
+.todo-btn {
+  color: white;
+  border: none;
+  outline: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-btn-complete {
+  background-color: rgb(0, 163, 73);
+}
+
+.todo-btn-incomplete {
+  background-color: rgb(163, 0, 35);
 }
