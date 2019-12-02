@@ -74,5 +74,10 @@
 }
 
 .todo-btn-incomplete {
-  background-color: rgb(163, 0, 35);
+  background-color: rgb(216, 100, 23);
+}
+
+.todo-btn-remove {
+  background-color: rgb(128, 0, 43);
+  margin-left: 20px;
 }

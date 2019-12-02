@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 type FormElem = React.FormEvent<HTMLFormElement>
@@ -26,10 +25,18 @@ function App(): JSX.Element {
 
   }
 
-  const completeTodo = (index: number) => {
+  const completeTodo = (index: number): void => {
     const newTodos: ITodo[] = [...todos]
     newTodos[index].complete = !newTodos[index].complete
     setTodos(newTodos)
+  }
+
+  const removeTodo = (index: number): void => {
+    const filteredTodos = todos.filter((todo, i) => {
+      return i !== index
+    })
+
+    setTodos(filteredTodos)
   }
 
   return (
@@ -43,7 +50,10 @@ function App(): JSX.Element {
         {todos.map((todo: ITodo, i: number) => (
           <div className="todo" key={i}>
             <div className={`todo-text ${todo.complete ? 'todo-text-complete' : ''}`} key={i}>{todo.text}</div>
-            <button className={`todo-btn ${todo.complete ? 'todo-btn-incomplete' : 'todo-btn-complete'}`} type="button" onClick={() => completeTodo(i)}>{todo.complete ? 'Incomplete' : 'Complete'}</button>
+            <div className="todo-btn-container">
+              <button className={`todo-btn ${todo.complete ? 'todo-btn-incomplete' : 'todo-btn-complete'}`} type="button" onClick={() => completeTodo(i)}>{todo.complete ? 'Incomplete' : 'Complete'}</button>
+              <button className="todo-btn todo-btn-remove" type="button" onClick={() => removeTodo(i)}>Remove</button>
+            </div>
           </div>
         ))}
       </section>
